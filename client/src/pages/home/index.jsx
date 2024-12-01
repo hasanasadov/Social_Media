@@ -61,7 +61,7 @@ const HomePage = () => {
           className="flex flex-col gap-5 px-4"
         >
           {pages?.map((page) =>
-            page?.items?.map((post) => <PostCard key={post._id} post={post} />)
+            page?.items?.map((post) => <PostCard key={post?._id} post={post} />)
           )}
         </InfiniteScroll>
         {isLoading && (

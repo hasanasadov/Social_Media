@@ -28,7 +28,7 @@ export const PostComments = ({ postId, isOpen }) => {
           </>
         )}
         {data?.items.map((comment) => (
-          <Comment postId={postId} key={comment._id} comment={comment} />
+          <Comment postId={postId} key={comment?._id} comment={comment} />
         ))}
         {data?.items.length === 0 && (
           <p className="text-gray-500 text-xs">No comments yet</p>

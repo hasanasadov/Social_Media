@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
 
     const count = await Post.countDocuments(filter);
 
-    const items = data.map((item) => {
+    const items = data?.map((item) => {
       return {
         ...item.toObject(),
         imageUrl: `${process.env.BASE_URL}${item.imageUrl.replace(/\\/g, "/")}`,

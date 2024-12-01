@@ -10,7 +10,7 @@ const getAll = async (req, res) => {
       post: postId,
     }).populate("user", "name email avatar");
 
-    const items = comments.map((comment) => ({
+    const items = comments?.map((comment) => ({
       _id: comment._id,
       content: comment.content,
       user: {
