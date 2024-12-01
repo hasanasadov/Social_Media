@@ -8,9 +8,10 @@ const { upload } = require("../middleware/upload");
 
 const router = Router();
 
-router.get("/", authorize(), postController.getAll);
+router.get("/", postController.getAll);
 router.post(
   "/",
+  authorize(),
   upload.single("image"),
   validateSchema(postCreateSchema),
   postController.create
