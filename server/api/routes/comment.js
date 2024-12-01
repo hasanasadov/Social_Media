@@ -6,7 +6,7 @@ const { commentSchema } = require("../validation/comment");
 
 const router = Router();
 
-router.get("/:postId", authorize(), commentController.getAll);
+router.get("/:postId", commentController.getAll);
 router.post(
   "/:postId",
   authorize(),
