@@ -77,7 +77,7 @@ export const PostCardAction = ({ post }) => {
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={() => {
-                mutate({ id: post._id });
+                mutate({ id: post?._id });
               }}
               className="hover:!bg-destructive hover:!text-white"
             >

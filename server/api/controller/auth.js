@@ -61,7 +61,7 @@ const login = async (req, res) => {
   //     return res.status(403).json({ message: "Your account is blocked!" });
   //   }
 
-  //   req.session.userId = user._id;
+  //   req.session.userId = user?._id;
 
   //   res.send({ message: "User logged in successfully." });
   // } catch (err) {

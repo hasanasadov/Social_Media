@@ -37,7 +37,7 @@ const getAll = async (req, res) => {
           avatar: item.user.avatar
             ? `${process.env.BASE_URL}${item.user.avatar}`
             : null,
-          _id: item.user._id,
+          _id: item.user?._id,
         },
       };
     });

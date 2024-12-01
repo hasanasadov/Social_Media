@@ -2,7 +2,7 @@ const User = require("../mongoose/schema/user");
 
 const update = async (req, res) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user?._id;
     const { name } = req.matchedData;
     const avatarFile = req.file;
 

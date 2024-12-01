@@ -23,7 +23,7 @@ export const PostCard = ({ post }) => {
     setCollapsed((prev) => !prev);
   }
 
-  const isOwner = user._id === currentUser._id;
+  const isOwner = user?._id === currentUser?._id;
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-md max-w-md min-w-[400px]">

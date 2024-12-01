@@ -11,10 +11,10 @@ const getAll = async (req, res) => {
     }).populate("user", "name email avatar");
 
     const items = comments?.map((comment) => ({
-      _id: comment._id,
+      _id: comment?._id,
       content: comment.content,
       user: {
-        _id: comment.user._id,
+        _id: comment.user?._id,
         name: comment.user.name,
         avatar: comment.user.avatar
           ? `${BASE_URL}${comment.user.avatar}`
@@ -34,7 +34,7 @@ const create = async (req, res) => {
   try {
     const { content } = req.matchedData;
     const { postId } = req.params;
-    const user = req.user._id;
+    const user = req.user?._id;
 
     const post = await Post.findById(postId);
     if (!post) {
@@ -61,7 +61,7 @@ const update = async (req, res) => {
     const { content } = req.matchedData;
 
     const comment = await Comment.findOneAndUpdate(
-      { _id: id, user: req.user._id },
+      { _id: id, user: req.user?._id },
       { content },
       { new: true }
     );
@@ -83,7 +83,7 @@ const remove = async (req, res) => {
 
     const comment = await Comment.findOneAndDelete({
       _id: id,
-      user: req.user._id,
+      user: req.user?._id,
     });
     if (!comment) {
       return res.status(404).json({ message: "Comment not found" });

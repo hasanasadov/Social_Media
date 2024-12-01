@@ -74,7 +74,7 @@ export const PostActionDialog = () => {
     formData.append("content", values.content);
     formData.append("tags", values.tags);
     if (values.image) formData.append("image", values.image);
-    mutate(isEdit ? { id: data._id, data: formData } : { data: formData });
+    mutate(isEdit ? { id: data?._id, data: formData } : { data: formData });
   }
 
   useEffect(() => {

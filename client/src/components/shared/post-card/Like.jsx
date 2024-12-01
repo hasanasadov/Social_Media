@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 export const PostLike = React.memo(({ likes, postId }) => {
   const { user: currentUser } = useSelector(selectUser);
-  const [isLiked, setIsLiked] = useState(likes.includes(currentUser._id));
+  const [isLiked, setIsLiked] = useState(likes.includes(currentUser?._id));
   const [count, setCount] = useState(likes.length);
   const { mutate, isPending } = useMutation({
     mutationFn: toggleLikePost,
@@ -29,7 +29,7 @@ export const PostLike = React.memo(({ likes, postId }) => {
   }
 
   useEffect(() => {
-    setIsLiked(likes.includes(currentUser._id));
+    setIsLiked(likes.includes(currentUser?._id));
     setCount(likes.length);
   }, [likes]);
 

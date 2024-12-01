@@ -69,7 +69,7 @@ export const Comment = ({ comment, postId }) => {
     });
   }
 
-  const isOwner = user._id === currentUser._id;
+  const isOwner = user?._id === currentUser?._id;
 
   return (
     <div className="flex items-center justify-between text-xs">
