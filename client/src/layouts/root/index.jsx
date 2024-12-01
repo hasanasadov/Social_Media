@@ -31,9 +31,9 @@ const RootLayout = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user) {
-    return <Navigate to={PATHS.LOGIN} />;
-  }
+  // if (!user) {
+  //   return <Navigate to={PATHS.LOGIN} />;
+  // }
 
   return (
     <div className="md:flex">

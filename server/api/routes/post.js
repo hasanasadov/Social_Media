@@ -11,7 +11,6 @@ const router = Router();
 router.get("/", authorize(), postController.getAll);
 router.post(
   "/",
-  authorize(),
   upload.single("image"),
   validateSchema(postCreateSchema),
   postController.create
